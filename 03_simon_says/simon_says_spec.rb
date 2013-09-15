@@ -35,12 +35,10 @@ describe "Simon says" do
   end
 
   describe "repeat" do
-    it "should repeat" do
-      repeat("hello").should == "hello hello"
-    end
+    
 
     # Wait a second! How can you make the "repeat" method
-    # take one *or* two arguments?
+    # take one *or* two   arguments?
     #
     # Hint: *default values*
     it "should repeat a number of times" do
@@ -57,12 +55,7 @@ describe "Simon says" do
       start_of_word("Bob", 2).should == "Bo"
     end
 
-    it "returns the first several letters" do
-      s = "abcdefg"
-      start_of_word(s, 1).should == "a"
-      start_of_word(s, 2).should == "ab"
-      start_of_word(s, 3).should == "abc"
-    end
+    
   end
 
   describe "first_word" do
@@ -76,9 +69,7 @@ describe "Simon says" do
   end
 
   describe "titleize" do
-    it "capitalizes a word" do
-      titleize("jaws").should == "Jaws"
-    end
+    
 
     it "capitalizes every word (aka title case)" do
       titleize("david copperfield").should == "David Copperfield"
