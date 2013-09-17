@@ -9,45 +9,47 @@ def wordcheck(word)
  			word << tmp << "ay"
 	  else
 	  	if "aeiou".include?(word[2])
-	  		tmp0 = word[0] << word[1]
-	  		word[0] = ""
-	  		word[0] = ""
-	  		word << tmp0 << "ay"
+	  		firstTwo(word)
 	  	else
-	  		tmp1 = word[0] << word[1] << word[2]
-	  		3.times { word[0] = '' }
-	  		word << tmp1 << "ay"
-	  	end
-	  	
+	  		print "calledthree"
+	  		firstThree(word)
+	  	end 	
 	  end
   end
 end
 
 def firstTwo(word)
 	tmp0 = word[0] << word[1]
-	print word
-
-	word[0] = ''
-		print word
-
-	word[0] = ''
-		print word
-
+	2.times { word[0] = '' }
 	word << tmp0 << "ay"
+end
+
+def firstThree(word)
+	tmp1 = word[0] << word[1] << word[2]
+	3.times { word[0] = '' }
+
+	word << tmp1 << "ay"
 end
 
 def translate(sentence)
 
 	if sentence.gsub(' ', '') != sentence
 		wordarr = sentence.split(' ')
-		wordarr.map { |word| wordcheck(word) }.join(" ")
+		wordarr.map { |word| conditions(word) }.join(" ")
 	else
-		if sentence[0] == 'q' && sentence[1] == 'u'
- 			firstTwo(sentence)
- 		else
-			wordcheck(sentence)
-		end
+		print "called"
+		conditions(sentence)
 	end
 end
-print translate("quiet")
+def conditions(word)
+	if word[0] == 'q' && word[1] == 'u'
+ 		firstTwo(word)
+  elsif word[1] == 'q' && word[2] == 'u'
+		firstThree(word)
+	else
+		print "gerro"
+		wordcheck(word)
+ 	end
+end
+print translate("three")
 
